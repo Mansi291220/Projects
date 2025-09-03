@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mansi Gurav – Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <button class="theme-toggle" id="themeToggle">🌓</button>
+
+  <div class="container">
+    <!-- Profile Section -->
+    <section id="profile">
+      <div class="profile-card">
+        <div class="profile-pic-wrapper">
+          <img src="C:\Users\OM\Desktop\GPP\PROJECTS\HTML&CSS_projects\portfolio\images\img.jpg" alt="Mansi Gurav" class="profile-pic" />
+        </div>
+        <h1>Mansi Gurav</h1>
+        <div class="tagline">
+          <span class="typewriter">Aspiring Engineer • Creative Coder • Tech Explorer</span>
+        </div>
+        <p>2nd‑year Computer Engineering student passionate about building meaningful web experiences and learning cutting‑edge tech.</p>
+        <button id="openAbout">More About Me</button>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <h2>⚡ Skills</h2>
+      <div class="skill"><div class="skill-name">HTML / CSS</div><div class="skill-bar"><div class="skill-bar-inner" data-level="90%"></div></div></div>
+      <div class="skill"><div class="skill-name">JavaScript</div><div class="skill-bar"><div class="skill-bar-inner" data-level="85%"></div></div></div>
+      <div class="skill"><div class="skill-name">Python</div><div class="skill-bar"><div class="skill-bar-inner" data-level="80%"></div></div></div>
+      <div class="skill"><div class="skill-name">C Programming</div><div class="skill-bar"><div class="skill-bar-inner" data-level="75%"></div></div></div>
+      <div class="skill"><div class="skill-name">Web Design</div><div class="skill-bar"><div class="skill-bar-inner" data-level="70%"></div></div></div>
+    </section>
+    <section id="projects" class="projects">
+      <h2>🛠️ Projects</h2>
+      <div class="project-wrapper" id="projectWrapper">
+        <div class="project-card">
+          <img src="C:\Users\OM\Desktop\GPP\PROJECTS\HTML&CSS_projects\portfolio\images\Task_schedular.png" alt="Project 2" />
+          <div class="project-info">
+            <h3>Task Schedular</h3>
+            <p>A task scheduler implemented using a queue to manage and execute tasks in a first-in, first-out (FIFO) order.</p>
+          </div>
+        </div>
+      <div class="project-card">
+          <img src="C:\Users\OM\Desktop\GPP\PROJECTS\HTML&CSS_projects\portfolio\images\travel agency.png" alt="Project 3" />
+          <div class="project-info">
+            <h3>travel agency website</h3>
+            <p>A website that showcases travel packages, destinations, and booking options for travelers.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="C:\Users\OM\Desktop\GPP\PROJECTS\HTML&CSS_projects\portfolio\images\portfolio.png" alt="Project 1" />
+          <div class="project-info">
+            <h3>Portfolio</h3>
+            <p>A simple personal portfolio website to showcase my skills and projects.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="C:\Users\OM\Desktop\GPP\PROJECTS\HTML&CSS_projects\portfolio\images\scraper.png" alt="Project 4" />
+          <div class="project-info">
+            <h3>film review scraper</h3>
+            <p>A program that extracts and collects film reviews from websites for analysis or display.</p>
+          </div>
+        </div>
+         <div class="project-card">
+          <img src="C:\Users\OM\Desktop\GPP\PROJECTS\HTML&CSS_projects\portfolio\images\word_analyer.png" alt="Project 3" />
+          <div class="project-info">
+            <h3>Word_analyzer</h3>
+            <p>A program that reads and analyzes text files to provide word frequency and usage statistics.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-nav">
+        <button id="prevProj">&larr;</button>
+        <button id="nextProj">&rarr;</button>
+      </div>
+    </section>
+  
+    <section id="contact">
+      <h2>✉️ Contact Me</h2>
+      <form class="contact-form" id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+        <label for="message">Message:</label>
+        <textarea id="message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+    <footer style="text-align:center;margin:40px 0;">
+      <a href="C:\Users\OM\Desktop\GPP\PROJECTS\HTML&CSS_projects\portfolio\resume\MansiGurav_Resume.pdf" download>📄 Download Resume</a>
+      <a href="https://github.com/Mansi291220" target="_blank">🐱 GitHub</a>
+      <a href="https://www.linkedin.com/in/mansi2112/" target="_blank">💼 LinkedIn</a>
+    </footer>
+  </div>
+
+  <!--About me extended -->
+  <div class="modal-bg" id="modalBg">
+    <div class="modal">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <h3>About Me</h3>
+      <p>Hi, I'm Mansi—a 3rd-year Computer Engineering student with a flair for full-stack web development and machine learning. 😊 I enjoy coding creative solutions, designing intuitive interfaces, collaborating on hackathons, and sharing knowledge with others.</p>
+      <p>In my free time, I explore open-source technologies, work on UI designs, and participate in tech communities. Feel free to contact me for projects or collaboration!</p>
+    </div>
+  </div>
+
+  <button class="back-to-top" id="backToTop">&#8679;</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

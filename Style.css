@@ -1,0 +1,419 @@
+/* ─────────────────────── Common Styles ─────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+:root {
+  --bg-dark: #0f2027;
+  --bg-mid: #203a43;
+  --bg-light: #2c5364;
+  --card-bg: rgba(30, 40, 55, 0.7);
+  --text-light: #f0f0f0;
+  --highlight: #ff6f61;
+  --accent: #f9d423;
+  --btn-bg: #4caf50;
+  --btn-hover: #388e3c;
+  --transition: 0.3s ease;
+}
+
+[data-theme='light'] {
+  --bg-dark: #f0f0f0;
+  --bg-mid: #e0e4e8;
+  --bg-light: #ccd1d9;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --text-light: #222;
+  --highlight: #2979ff;
+  --accent: #ffa000;
+  --btn-bg: #2979ff;
+  --btn-hover: #1565c0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, var(--bg-dark), var(--bg-mid), var(--bg-light));
+  color: var(--text-light);
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ─────────────────────── Container ─────────────────────── */
+.container {
+  max-width: 1040px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  margin: 20px 0 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+p {
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+/* ─────────────── Dark/Light Toggle ─────────────── */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--btn-bg);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background var(--transition);
+  z-index: 999;
+}
+
+.theme-toggle:hover {
+  background: var(--btn-hover);
+}
+
+/* ─────────────── Profile Card ─────────────── */
+.profile-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  margin-top: 80px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.profile-pic-wrapper {
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b, #f7b733, #4caf50, #2979ff);
+  background-size: 400% 400%;
+  animation: gradientRotate 8s ease infinite;
+  border-radius: 50%;
+  padding: 6px;
+  margin: 0 auto 20px;
+}
+
+@keyframes gradientRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--bg-dark);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.tagline {
+  font-size: 1.3rem;
+  color: var(--accent);
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+/* ─────────────── Typewriter Animation ─────────────── */
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--accent);
+  animation: typing 4s steps(40, end) infinite, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--accent);
+  }
+}
+
+/* ─────────────── Modal ─────────────── */
+.modal-bg {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.modal-bg.active {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ─────────────── Skills ─────────────── */
+.skills {
+  margin: 30px 0;
+}
+
+.skill {
+  margin: 12px 0;
+  position: relative;
+}
+
+.skill-name {
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.skill-bar-inner {
+  height: 100%;
+  background: var(--highlight);
+  width: 0;
+  border-radius: 8px;
+  transition: width 1.2s ease-out;
+}
+
+/* ─────────────── Projects ─────────────── */
+.projects {
+  position: relative;
+  margin: 40px 0;
+}
+
+.project-wrapper {
+  display: flex;
+  overflow: hidden;
+  padding-bottom: 16px;
+}
+
+.project-card {
+  min-width: 280px;
+  max-width: 280px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.project-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 16px;
+}
+
+.project-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-nav button {
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* ─────────────── Testimonials ─────────────── */
+.testimonials {
+  margin: 50px 0;
+}
+
+.testimonial {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.testimonial.active {
+  display: block;
+  animation: fadeIn 0.6s ease;
+}
+
+.testimonial p {
+  font-style: italic;
+}
+
+.testimonial h3 {
+  margin-top: 12px;
+}
+
+/* ─────────────── Contact Form ─────────────── */
+.contact-form {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  margin-top: 30px;
+}
+
+.contact-form label {
+  display: block;
+  margin: 12px 0 4px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.contact-form button {
+  background: var(--btn-bg);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background var(--transition);
+}
+
+.contact-form button:hover {
+  background: var(--btn-hover);
+}
+
+/* ─────────────── Back to Top ─────────────── */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--highlight);
+  color: #fff;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  z-index: 900;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─────────────── Responsive ─────────────── */
+@media (max-width: 768px) {
+  .project-wrapper {
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .project-card {
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .profile-card {
+    padding: 24px;
+  }
+}
